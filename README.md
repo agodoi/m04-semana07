@@ -20,6 +20,8 @@ Neste encontro, será apresentado como ativar acionadores básicos (linha de for
 
 ### (4) Quais os cuidados se você usar relés no seu projeto?
 
+https://portal.vidadesilicio.com.br/descobrindo-o-endereco-i2c/
+
 
 ## Protocolo I2C
 
