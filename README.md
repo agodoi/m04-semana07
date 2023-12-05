@@ -27,10 +27,9 @@ O barramento I2C (Inter-Integrated Circuit) é um protocolo de comunicação ser
 
 No ESP32, o I2C é implementado por meio de hardware e software. Veja na Fig. 1, como se comporta fisicamente as conexões eletrônica no barramento I2C.
 
+https://github.com/agodoi/m04-semana08/blob/main/imgs/barramentoI2C.png
 
-
-
-Abaixo, vou explicar em detalhes técnicos como funciona a comunicação I2C no ESP32, incluindo a definição de endereços para dispositivos escravos.
+Note que o mesmo par de fios SDA e SCL é usado para conectar todos os sensores. Não pode haver inversão desses pinos. Se isso acontecer, toda a comunicação será interrompida.
 
 ### Hardware I2C no ESP32:
 
@@ -41,14 +40,14 @@ O ESP32 possui hardware dedicado para I2C, o que simplifica a implementação e 
 
 ### Configuração do Barramento I2C:
 
-Para usar o I2C no ESP32, é necessário inicializar e configurar o barramento. Vou apresentar um exemplo usando a biblioteca Wire.h, que é comumente utilizada para manipular o I2C no Arduino e no ESP32.
+Para usar o I2C no ESP32, é necessário inicializar e configurar o barramento. A biblioteca mais usada para o I2C chama-se **Wire.h**.
 
-```cpp
+```
 #include <Wire.h>
 
 void setup() {
-  Wire.begin();  // Inicializa o barramento I2C
-  Serial.begin(115200);
+  Wire.begin();          // Inicializa o barramento I2C
+  Serial.begin(115200);  // Inicializa a comunicação UART, que nesse caso, ocorre pelo cabo USB.
 }
 
 void loop() {
