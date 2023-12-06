@@ -61,7 +61,7 @@ Veja que o ESP32 já possui os pinos SDA e SCL prontos para serem utilizados. Ev
 
 O barramento de endereçamento I2C possui 7 bits. Isso significa que a quantidade de dispositivos suportados é de ```N = 2^7 = 128```. A faixa de endereços é dada na base hexadecimal. Portanto, você deve usar o número hexadecimal de **00** até **7F**.
 
-Contudo, alguns dispositivos I2C já possuem um endereço fixo entre 00 e 7F. Ao invés de tentar encontrar na sorte de qual endereço tal dispositivo está fixado, use esse código para você varrer os endereços. Esse código-fonte pergunta ao dispositivo, qual o endereço ele está respondendo. Note que a rotina de varredura conta de 0 a 127, mas o resultado impresso no monitor serial é convertido para hexadecimal:
+Contudo, alguns dispositivos I2C já possuem um endereço fixo entre 00 e 7F. Essa fixação é feita por microjumpers soldados na placa. Ao invés de tentar encontrar na sorte de qual endereço tal dispositivo está fixado, use esse código para você varrer os 128 endereços. Esse código-fonte pergunta ao dispositivo, qual o endereço ele está respondendo. Note que a rotina de varredura conta de 0 a 127, mas o resultado impresso no monitor serial é convertido para hexadecimal:
 
 ```
 #include <Wire.h>
@@ -109,6 +109,11 @@ void loop() {
 }
 ```
 
+## Comunicação I2C:
+
+A comunicação I2C é iniciada pelo mestre (ESP32) e pode envolver um ou mais dispositivos escravos. A comunicação consiste em transferências de dados em bytes. O mestre envia um endereço de dispositivo seguido por dados ou recebe dados do dispositivo escravo. **Você pode usar endereços na base decimal (0 até 127) ou hexadecimal (x00 até x7F)**.
+
+
 ## Cabeçalho do I2C
 
 A figura a seguir mostra como o cabeçalho do I2C é organizado. Note que possui os 7 bits do endereçamento e na sequência, 8 bits de dados. É nesses campo de dados que os valores do sensor são transferidos ao ESP32.
@@ -120,9 +125,11 @@ A figura a seguir mostra como o cabeçalho do I2C é organizado. Note que possui
 
 ## Documentação Oficial I2C
 
+Esse link está a documentação oficial da fabricante do ESP32, chamada Espressif.
+
 [Documentação](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/i2c.html)
 
-### Configuração do Barramento I2C:
+## Configuração do Barramento I2C:
 
 Para usar o I2C no ESP32, é necessário inicializar e configurar o barramento. A biblioteca mais usada para o I2C chama-se **Wire.h**.
 
@@ -138,10 +145,6 @@ void loop() {
   // Seu código aqui
 }
 ```
-
-### Comunicação I2C:
-
-A comunicação I2C é iniciada pelo mestre (ESP32) e pode envolver um ou mais dispositivos escravos. A comunicação consiste em transferências de dados em bytes. O mestre envia um endereço de dispositivo seguido por dados ou recebe dados do dispositivo escravo.
 
 #### Enviando dados para um dispositivo escravo:
 
