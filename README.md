@@ -48,6 +48,15 @@ Na figura a seguir, é possível entender melhor como um projeto prático pode s
    <img alt="Circuito I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/projetoPraticoI2C.png)">
 </picture>
 
+Veja que o ESP32 já possui os pinos SDA e SCL prontos para serem utilizados. Evite nomear outros pinos como SDA e SCL, pois podem não funcionar adequadamente.
+
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/m04-semana08/blob/main/imgs/ESP32-Pinout.jpg">
+   <img alt="Circuito I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/ESP32-Pinout.jpg)">
+</picture>
+
+
 ## Quantidade de Dispositivos Suportados
 
 O barramento de endereçamento I2C possui 7 bits. Isso significa que a quantidade de dispositivos suportados é de ```N = 2^7 = 128```. A faixa de endereços é dada na base hexadecimal. Portanto, você deve usar o número hexadecimal de **00** até **7F**.
