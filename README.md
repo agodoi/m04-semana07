@@ -278,6 +278,30 @@ Aqui está um diagrama esquemático simplificado para ajudar a visualizar o func
 
 Este é um resumo geral do funcionamento de um relé. A complexidade pode variar dependendo do tipo específico de relé (por exemplo, relé eletromagnético, relé de estado sólido), mas os princípios básicos permanecem os mesmos.
 
+Os campos vetoriais são uma ferramenta matemática usada para descrever o comportamento de quantidades vetoriais em diferentes pontos do espaço. Embora o funcionamento específico de um relé não seja geralmente descrito usando campos vetoriais, podemos fazer uma analogia simplificada para ajudar a entender como a energia eletromagnética age sobre a armatura do relé.
+
+### Análise do Funcionamento do Relé com Conceitos Matemáticos:
+
+1. **Campo Magnético (B):**
+   - A corrente elétrica que flui através da bobina do relé gera um campo magnético (B). Podemos considerar o campo magnético como um vetor que possui magnitude e direção em cada ponto ao redor da bobina.
+
+2. **Armatura como Vetor Posição (r):**
+   - Podemos associar a armatura do relé com um vetor posição (r), representando a posição da armatura no espaço. À medida que a armatura se move, podemos considerar sua posição em relação à bobina.
+
+3. **Força Magnética (F):**
+   - A armatura, que atua como uma carga magnética, experimenta uma força (F) devido à interação com o campo magnético. A relação entre o campo magnético, a corrente e a força é descrita pela Lei de Ampère.
+
+4. **Equação Vetorial:**
+   - Podemos expressar essa interação em termos de uma equação vetorial, onde a força magnética (F) é proporcional ao produto vetorial da corrente (I) e do vetor posição (r), de acordo com a regra da mão direita.
+
+5. **Movimento da Armatura:**
+   - Quando a corrente é aplicada à bobina, o campo magnético resultante exerce uma força sobre a armatura, movendo-a na direção determinada pelo vetor campo magnético.
+
+6. **Comutação dos Contatos:**
+   - O movimento da armatura causa a comutação dos contatos. Se considerarmos a posição da armatura como um parâmetro de controle, podemos relacionar seu movimento aos estados dos contatos (abertos ou fechados).
+
+Essa abordagem é uma simplificação e não representa um modelo matemático rigoroso, mas pode ajudar a visualizar o funcionamento do relé em termos de campos vetoriais. Em termos práticos, os engenheiros elétricos geralmente usam equações específicas para descrever o comportamento eletromagnético, e os campos vetoriais são ferramentas poderosas para análise em sistemas mais complexos.
+
 
 ## Quais cuidados ao usar relé?
 
