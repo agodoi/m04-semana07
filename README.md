@@ -50,7 +50,55 @@ Na figura a seguir, é possível entender melhor como um projeto prático pode s
 
 ## Quantidade de Dispositivos Suportados
 
-O barramento de endereçamento I2C possui 7 bits. Isso significa que tem-se ```N = 2^7 = 128``` dispositivos.
+O barramento de endereçamento I2C possui 7 bits. Isso significa que a quantidade de dispositivos suportados é de ```N = 2^7 = 128```. A faixa de endereços é dada na base hexadecimal. Portanto, você deve usar o número hexadecimal de **00** até **7F**.
+
+Contudo, alguns dispositivos I2C já possuem um endereço fixo entre 00 e 7F. Ao invés de tentar a sorte de qual endereço tal dispositivo está fixado, use esse código para você varrer os endereços. Esse código-fonte pergunta ao dispositivo, qual o endereço ele está respondendo:
+
+```
+#include <Wire.h>
+ 
+void setup() {
+  Wire.begin();
+  Serial.begin(115200);
+  Serial.println("\nScanner I2C");
+    byte error, address;
+  int nDevices;
+  Serial.println("Varrendo...");
+  nDevices = 0;
+  for(address = 1; address < 127; address++ ) {
+    Wire.beginTransmission(address);
+    error = Wire.endTransmission();
+    if (error == 0) {
+      Serial.print("Dispositivo I2C encontrado no endereço 0x");
+      if (address<16) {
+        Serial.print("0");
+      }
+      Serial.println(address,HEX);
+      nDevices++;
+    }
+    else if (error==4) {
+      Serial.print("Erro desconhecido no endereço 0x");
+      if (address<16) {
+        Serial.print("0");
+      }
+      Serial.println(address,HEX);
+    }    
+  }
+  if (nDevices == 0) {
+    Serial.println("Nenhum dispositivo I2C encontrado\n");
+  }
+  else {
+    Serial.println("pronto\n");
+  }
+  delay(5000);  
+  Serial.print("Dispositivos I2C encontrados:");
+  Serial.println(nDevices); 
+}
+ 
+void loop() {
+      
+}
+```
 
 ### Configuração do Barramento I2C:
 
