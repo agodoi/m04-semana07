@@ -265,7 +265,7 @@ Aqui está um diagrama esquemático simplificado para ajudar a visualizar o func
 
 ### Imagem do Interior de um Relé:
 
-![Interior de um Relé](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Relay_animated.gif/400px-Relay_animated.gif)
+![Interior de um Relé](https://en.m.wikipedia.org/wiki/File:Relay_principle_horizontal_new.gif)
 
 1. **Bobina (Parte Superior):**
    - A bobina está localizada na parte superior e é representada pela espira de fio.
