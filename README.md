@@ -53,7 +53,7 @@ Veja que o ESP32 já possui os pinos SDA e SCL prontos para serem utilizados. Ev
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/m04-semana08/blob/main/imgs/ESP32-Pinout.jpg">
-   <img alt="Circuito I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/ESP32-Pinout.jpg) width="700px">
+   <img alt="Pinout" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/ESP32-Pinout.jpg) width="500px">
 </picture>
 
 
