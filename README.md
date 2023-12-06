@@ -200,11 +200,18 @@ O aprimoramento vem com a adição de novas informações ao seu projeto. Tente 
 
  Locais que podem inserir sensores:
 
-    - Tapetes
-    - Sola de sapatos
-    - Macas
-    - Batentes de portas
-    - Roupas
-    - Acessórios e ardonos
-    - Relógios
-    - Capinhas de celular
+- Tapetes
+  
+- Sola de sapatos
+
+- Macas
+
+- Batentes de portas
+
+- Roupas
+
+- Acessórios e ardonos
+
+- Relógios
+
+- Capinhas de celular
