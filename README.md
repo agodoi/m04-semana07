@@ -255,7 +255,10 @@ Um relé é um dispositivo eletromecânico que utiliza um eletroímã para contr
 
 Aqui está um diagrama esquemático simplificado para ajudar a visualizar o funcionamento:
 
-[Diagrama de Relé](https://www.electricalelibrary.com/2018/08/06/conheca-o-rele-eletromecanico/)
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/m04-semana08/blob/main/imgs/diagrama_rele.png">
+   <img alt="Cabeçalho I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/diagrama_rele.png)">
+</picture>
 
 1. **Bobina (Circuito de Controle):**
    - O símbolo da bobina representa o circuito de controle que é conectado à fonte de alimentação.
