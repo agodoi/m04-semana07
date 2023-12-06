@@ -257,7 +257,7 @@ Aqui está um diagrama esquemático simplificado para ajudar a visualizar o func
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/m04-semana08/blob/main/imgs/diagrama_rele.png">
-   <img alt="Cabeçalho I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/diagrama_rele.png) width="300px">
+   <img alt="Cabeçalho I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/diagrama_rele.png) width="100px">
 </picture>
 
 1. **Bobina (Circuito de Controle):**
