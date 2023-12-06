@@ -32,7 +32,7 @@ No ESP32, o I2C é implementado por meio de hardware e software. Veja na Fig. 1,
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/m04-semana08/blob/main/imgs/barramentoI2C.png">
-   <img alt="Barramento I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/barramentoI2C.png)" width="500px">
+   <img alt="Barramento I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/barramentoI2C.png)" width="700px">
 </picture>
 
 
