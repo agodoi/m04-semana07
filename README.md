@@ -188,15 +188,15 @@ void loop() {
 
 O aprimoramento vem com a adição de novas informações ao seu projeto. Tente adicionar sensores que lhe tragam mais insights:
 
-  - De barreira por infravermelho
+- De barreira por infravermelho
 
-  - De pressão mecânica
-  
-  - De presença por infravermelho
-  
-  - De toque em maçanetas ou portas
-  
-  - Visão computacional que detectam um humano
+- De pressão mecânica
+
+- De presença por infravermelho
+
+- De toque em maçanetas ou portas
+
+- Visão computacional que detectam um humano
 
  Locais que podem inserir sensores:
 
@@ -215,3 +215,4 @@ O aprimoramento vem com a adição de novas informações ao seu projeto. Tente 
 - Relógios
 
 - Capinhas de celular
+
