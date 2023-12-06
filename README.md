@@ -45,7 +45,7 @@ Na figura a seguir, é possível entender melhor como um projeto prático pode s
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/m04-semana08/blob/main/imgs/projetoPraticoI2C.png">
-   <img alt="Circuito I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/projetoPraticoI2C.png) width="100px">
+   <img alt="Circuito I2C" src="(https://github.com/agodoi/m04-semana08/blob/main/imgs/projetoPraticoI2C.png) width="100px">
 </picture>
 
 Veja que o ESP32 já possui os pinos SDA e SCL prontos para serem utilizados. Evite nomear outros pinos como SDA e SCL, pois podem não funcionar adequadamente.
@@ -53,7 +53,7 @@ Veja que o ESP32 já possui os pinos SDA e SCL prontos para serem utilizados. Ev
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/m04-semana08/blob/main/imgs/ESP32-Pinout.jpg">
-   <img alt="Pinout" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/ESP32-Pinout.jpg) width="500px">
+   <img alt="Pinout" src="(https://github.com/agodoi/m04-semana08/blob/main/imgs/ESP32-Pinout.jpg) width="500px">
 </picture>
 
 
@@ -123,7 +123,7 @@ A figura a seguir mostra como o cabeçalho do I2C é organizado. Note que possui
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/m04-semana08/blob/main/imgs/I2C_Basic_Address_and_Data_Frames.jpg">
-   <img alt="Cabeçalho I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/I2C_Basic_Address_and_Data_Frames.jpg)">
+   <img alt="Cabeçalho I2C" src="(https://github.com/agodoi/m04-semana08/blob/main/imgs/I2C_Basic_Address_and_Data_Frames.jpg)">
 </picture>
 
 ## Documentação Oficial I2C
