@@ -106,7 +106,7 @@ A figura a seguir mostra como o cabeçalho do I2C é organizado. Note que possui
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/m04-semana08/blob/main/imgs/I2C_Basic_Address_and_Data_Frames.jpg">
-   <img alt="Circuito I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/I2C_Basic_Address_and_Data_Frames.jpg)">
+   <img alt="Cabeçalho I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/I2C_Basic_Address_and_Data_Frames.jpg)">
 </picture>
 
 
