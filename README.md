@@ -14,7 +14,7 @@ Neste encontro, será apresentado como ativar acionadores básicos (linha de for
 
 ### (1) Quantos sensores I2C cabem no ESP32?
 
-### (2) Quais ideias você aproveitar no seu projeto?
+### (2) Quais ideias podem melhorar o seu projeto?
 
 ### (3) Qual a vantagem de se usar sensores I2C?
 
@@ -129,7 +129,7 @@ Esse link está a documentação oficial da fabricante do ESP32, chamada Espress
 
 [Documentação](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/i2c.html)
 
-## Configuração do Barramento I2C:
+### Configuração do Barramento I2C:
 
 Para usar o I2C no ESP32, é necessário inicializar e configurar o barramento. A biblioteca mais usada para o I2C chama-se **Wire.h**.
 
@@ -166,7 +166,7 @@ void loop() {
 
 #### Recebendo dados de um dispositivo escravo:
 
-```cpp
+```
 #include <Wire.h>
 
 void setup() {
@@ -184,8 +184,18 @@ void loop() {
 }
 ```
 
-### Definindo Endereços para Dispositivos Escravos:
+## Ideias de aprimoramento
 
-Cada dispositivo escravo em um barramento I2C precisa ter um endereço único. O endereço padrão de 7 bits é frequentemente usado. No exemplo acima, o endereço do dispositivo escravo é definido como 8. Para definir um endereço diferente, você deve usar jumpers ou configurações específicas do dispositivo escravo.
+O aprimoramento vem com a adição de novas informações ao seu projeto. Tente adicionar sensores que lhe tragam mais insights:
 
-Espero que estas informações tenham sido úteis para entender como funciona a comunicação I2C no ESP32. Se precisar de mais detalhes ou esclarecimentos, sinta-se à vontade para perguntar.
+  - De barreira por infravermelho
+
+  - De pressão mecânica
+  
+  - De presença por infravermelho
+  
+  - De toque em maçanetas ou portas
+  
+  - Visão computacional que detectam um humano
+
+ 
