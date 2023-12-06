@@ -43,6 +43,11 @@ Note que o mesmo par de fios SDA e SCL é usado para conectar todos os sensores.
 
 Na figura a seguir, é possível entender melhor como um projeto prático pode ser montado:
 
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/m04-semana08/blob/main/imgs/projetoPraticoI2C.png">
+   <img alt="Circuito I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/projetoPraticoI2C.png)">
+</picture>
+
 
 
 ### Configuração do Barramento I2C:
