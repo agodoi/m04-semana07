@@ -36,14 +36,14 @@ No ESP32, o I2C é implementado por meio de hardware e software. Veja na Fig. 1,
 </picture>
 
 
-Note que o mesmo par de fios SDA e SCL é usado para conectar todos os sensores. Não pode haver inversão desses pinos. Se isso acontecer, toda a comunicação será interrompida.
-
-### Hardware I2C no ESP32:
-
-O ESP32 possui hardware dedicado para I2C, o que simplifica a implementação e melhora o desempenho. Existem dois pinos principais para I2C no ESP32:
+Note que o mesmo par de fios SDA e SCL é usado para conectar todos os sensores. Não pode haver inversão desses pinos. Se isso acontecer, toda a comunicação será interrompida. A função de cada pino é a seguinte:
 
 - **SDA (Serial Data Line):** Pino para a linha de dados. Este pino é usado para enviar e receber dados.
 - **SCL (Serial Clock Line):** Pino para a linha de clock. Este pino é usado para sincronizar a transferência de dados entre dispositivos.
+
+Na figura a seguir, é possível entender melhor como um projeto prático pode ser montado:
+
+
 
 ### Configuração do Barramento I2C:
 
