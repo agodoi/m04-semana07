@@ -52,7 +52,7 @@ Na figura a seguir, é possível entender melhor como um projeto prático pode s
 
 O barramento de endereçamento I2C possui 7 bits. Isso significa que a quantidade de dispositivos suportados é de ```N = 2^7 = 128```. A faixa de endereços é dada na base hexadecimal. Portanto, você deve usar o número hexadecimal de **00** até **7F**.
 
-Contudo, alguns dispositivos I2C já possuem um endereço fixo entre 00 e 7F. Ao invés de tentar a sorte de qual endereço tal dispositivo está fixado, use esse código para você varrer os endereços. Esse código-fonte pergunta ao dispositivo, qual o endereço ele está respondendo:
+Contudo, alguns dispositivos I2C já possuem um endereço fixo entre 00 e 7F. Ao invés de tentar encontrar na sorte de qual endereço tal dispositivo está fixado, use esse código para você varrer os endereços. Esse código-fonte pergunta ao dispositivo, qual o endereço ele está respondendo. Note que a rotina de varredura conta de 0 a 127, mas o resultado impresso no monitor serial é convertido para hexadecimal:
 
 ```
 #include <Wire.h>
