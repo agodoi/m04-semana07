@@ -118,6 +118,9 @@ A figura a seguir mostra como o cabeçalho do I2C é organizado. Note que possui
    <img alt="Cabeçalho I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/I2C_Basic_Address_and_Data_Frames.jpg)">
 </picture>
 
+## Documentação Oficial I2C
+
+[Documentação](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/i2c.html)
 
 ### Configuração do Barramento I2C:
 
@@ -142,7 +145,7 @@ A comunicação I2C é iniciada pelo mestre (ESP32) e pode envolver um ou mais d
 
 #### Enviando dados para um dispositivo escravo:
 
-```cpp
+```
 #include <Wire.h>
 
 void setup() {
