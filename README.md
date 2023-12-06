@@ -1,6 +1,6 @@
-# Sistema de disparo de atuadores
+# Sistema de Disparo de Atuadores
 
-Neste encontro, será apresentado como ativar acionadores básicos (linha de força, motores, alarmes) a partir da resposta de sensores de forma a implementar regras de atuação. Adicionalmente, trataremos no detalhe, como funciona a comunicação I2C.
+Neste encontro, será apresentado como ativar acionadores básicos (linha de força, motores, relés) a partir da resposta de sensores de forma a implementar regras de atuação. Adicionalmente, trataremos no detalhe, como funciona a comunicação I2C.
 
 ## Assuntos relacionados
 
@@ -282,6 +282,42 @@ Aqui está um diagrama esquemático simplificado para ajudar a visualizar o func
 Este é um resumo geral do funcionamento de um relé. A complexidade pode variar dependendo do tipo específico de relé (por exemplo, relé eletromagnético, relé de estado sólido), mas os princípios básicos permanecem os mesmos.
 
 Os campos vetoriais são uma ferramenta matemática usada para descrever o comportamento de quantidades vetoriais em diferentes pontos do espaço. Embora o funcionamento específico de um relé não seja geralmente descrito usando campos vetoriais, podemos fazer uma analogia simplificada para ajudar a entender como a energia eletromagnética age sobre a armatura do relé.
+
+## Como energizar um rele?
+
+Para energnizar um relé, simples use o comando ```digitalWrite(pinoRele,LOW)``` ou ```digitalWrite(pinoRele,HIGH)```. O mais comum é o ```LOW```.
+
+Veja um exemplo:
+
+```
+// Define os pinos utilizados
+const int botaoPin = 2;  // Pino digital conectado ao botão
+const int relePin = 3;   // Pino digital conectado ao relé
+
+void setup() {
+  // Configuração dos pinos
+  pinMode(botaoPin, INPUT_PULLUP); // Configura o pino do botão como entrada com pull-up interno
+  pinMode(relePin, OUTPUT);         // Configura o pino do relé como saída
+  digitalWrite(relePin, HIGH;      // Inicializa o relé como desativado
+}
+
+void loop() {
+  // Verifica se o botão foi pressionado
+  if (digitalRead(botaoPin) == LOW) {
+    // Se o botão foi pressionado, ativa o relé
+    digitalWrite(relePin, LOW);
+    delay(500); // Adiciona um atraso para evitar ativação repetida imediata (debounce)
+    
+    // Aguarda até que o botão seja liberado antes de desativar o relé
+    while (digitalRead(botaoPin) == HIGH) {
+      delay(10); // Debounce
+    }
+    
+    // Desativa o relé
+    digitalWrite(relePin, HIGH);
+  }
+}
+```
 
 ### Análise do Funcionamento do Relé com Conceitos Matemáticos:
 
