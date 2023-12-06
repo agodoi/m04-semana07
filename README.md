@@ -217,3 +217,6 @@ O aprimoramento vem com a adição de novas informações ao seu projeto. Tente 
 
 - Capinhas de celular
 
+## Quais cuidados ao usar relé?
+
+O relé um dispositivo que usa o campo magnético formado em sua bobina interna para atrair uma pequena chapinha de metal.
