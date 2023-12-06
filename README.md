@@ -48,7 +48,9 @@ Na figura a seguir, é possível entender melhor como um projeto prático pode s
    <img alt="Circuito I2C" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/m04-semana08/blob/main/imgs/projetoPraticoI2C.png)">
 </picture>
 
+## Quantidade de Dispositivos Suportados
 
+O barramento de endereçamento I2C possui 7 bits. Isso significa que tem-se ```N = 2^7 = 128``` dispositivos.
 
 ### Configuração do Barramento I2C:
 
