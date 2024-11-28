@@ -346,19 +346,30 @@ void loop() {
 # Entregável e Regras do Ensaio do Mapa de Calor do WiFi
 
 A) Faça um vídeo de até 7min;
+
 B) Visite os seguintes locais:
     1) sala de aula, monitore por 10s
+    
     2) catraca principal, monitore por 10s
+    
     3) suba para o 1º andar, vá até o posto do IT Bar, monitore por 10s
+    
     4) ainda no 1º andar, entre no elevador e fique por lá com a porta fechada por 20s e monitore
+    
     5) suba até 2º andar, vá até laboratório do André Leal, monitore por 10s
+    
     6) vá até o final do mesanino 2, na última salinha de reunião, monitore por 10s
+    
     7) dessa pelo elevador novamente sem ficar lá dentro
+    
     8) saia do Inteli pela catraca principal e vá até o outro lado da rua, monitore por 10s.
+    
     9) Encerre o vídeo lá.
     
 C) Suba o vídeo no YouTube, deixe-o como não listado
+
 D) Monte um relatório descrevendo como ficou o sinal em cada local e conclua as diferenças
+
 E) Trave o seu relatório num PDF e adicione o link do YouTube e poste na Adalove
 
 Prazo: começa na aula e fecha hoje até às 16h.
