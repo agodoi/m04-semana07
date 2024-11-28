@@ -345,9 +345,10 @@ void loop() {
 
 # Entregável e Regras do Ensaio do Mapa de Calor do WiFi
 
-A) Faça um vídeo de até 7min;
+A) Faça um vídeo de até 7min.
 
 B) Visite os seguintes locais:
+
     1) sala de aula, monitore por 10s
     
     2) catraca principal, monitore por 10s
