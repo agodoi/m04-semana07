@@ -345,7 +345,7 @@ void loop() {
 
 # Entregável e Regras do Ensaio do Mapa de Calor do WiFi
 
-A) Faça um vídeo de até 7min monstrando o gráfico do Ubidots, o seu monitor Serial e o ESP32. Tudo no mesmo quadro. Tente dividir a tela compartilhando o Ubidots e o seu monitor Serial.
+A) Faça um vídeo CONTÍNUO (sem cortes) de até 7min monstrando o gráfico do Ubidots, o seu monitor Serial e o ESP32. Tudo no mesmo quadro. Tente dividir a tela compartilhando o Ubidots e o seu monitor Serial.
 
 B) Visite os seguintes locais:
 
