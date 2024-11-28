@@ -200,7 +200,7 @@ d) Converta -35dBm para escala linear
 
 # Ponderada
 
-Este projeto é composto de uma coleta de potência do sinal WiFi em dBm de uma rede WiFi usando um ESP32 e a publicação destes valores em uma dashboard de uma plataforma online. O projeto IoT deve posssuir um ESP32 conectado a um Wifi, medindo o sinal de radiofrequência e imprimindo os dados em dBm na porta serial da Arduino IDE, além de publicar tais valores para a plataforma. Elabore um código MQTT capaz de transferir o valor de dBm de cada instante para a plataforma online. Nesta plataforma online, configure um gráfico contínuo de valores do dBm (gráfico tempo x dBm), e realize testes em cenários distintos. No final, vá até o elevador do Inteli para simular a gaiola de Faraday. Em seguida, após pelo menos 5 segundos saia do elevador e verifique a diferença de sinal. Sua dashboard deve registrar este bloqueio temporário do sinal. Filme esta experiência completa (testes realizados) e envie o link do vídeo de duração de no mínimo 3 e no máximo 5 minutos pelo Adalove (link do seu vídeo do Google Drive com acesso na opção "qualquer pessoa com o link").
+Este projeto é composto de uma coleta de potência do sinal WiFi em dBm de uma rede WiFi usando um ESP32 e a publicação destes valores em uma dashboard de uma plataforma online. O projeto IoT deve posssuir um ESP32 conectado a um Wifi, medindo o sinal de radiofrequência e imprimindo os dados em dBm na porta serial da Arduino IDE, além de publicar tais valores para a plataforma. Elabore um código MQTT capaz de transferir o valor de dBm de cada instante para a plataforma online. Nesta plataforma online, configure um gráfico contínuo de valores do dBm (gráfico tempo x dBm), e realize testes em cenários distintos. No final, vá até o elevador do Inteli para simular a gaiola de Faraday. Mais detalhes, vá até o final dessa aula.
 
 ## Barema
 
@@ -345,7 +345,7 @@ void loop() {
 
 # Entregável e Regras do Ensaio do Mapa de Calor do WiFi
 
-A) Faça um vídeo de até 7min.
+A) Faça um vídeo de até 7min monstrando o gráfico do Ubidots, o seu monitor Serial e o ESP32. Tudo no mesmo quadro. Tente dividir a tela compartilhando o Ubidots e o seu monitor Serial.
 
 B) Visite os seguintes locais:
 
