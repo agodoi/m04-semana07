@@ -225,6 +225,8 @@ O projeto IoT posssui um ESP conectado ao WiFi, medindo o sinal de RF e imprimin
 
 #### Esse código está atualizado e funcionando. Alterem as variáveis com const char para as suas credenciais.
 
+Se você não mexeu com o Ubidots até agora, [BAIXE AS BIBLIOTECAS AQUI](https://help.ubidots.com/en/articles/748067-connect-an-esp32-devkitc-to-ubidots-over-mqtt)
+
 ```
 #include "UbidotsEsp32Mqtt.h"
 
