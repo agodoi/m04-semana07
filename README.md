@@ -373,7 +373,7 @@ D) Monte um relatório descrevendo como ficou o sinal em cada local e conclua as
 
 E) Trave o seu relatório num PDF e adicione o link do YouTube e poste na Adalove
 
-Prazo: começa na aula e fecha hoje até às 16h.
+Prazo: começa na aula e fecha hoje até às 18h.
 
 
 # Conclusão
