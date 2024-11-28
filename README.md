@@ -351,7 +351,7 @@ B) Visite os seguintes locais:
 
     1) sala de aula, monitore por 10s
     
-    2) catraca principal, monitore por 10s
+    2) catraca da recepção (onde tem uma bancada com recepcionistas), monitore por 10s
     
     3) suba para o 1º andar, vá até o posto do IT Bar, monitore por 10s
     
@@ -363,7 +363,7 @@ B) Visite os seguintes locais:
     
     7) dessa pelo elevador novamente sem ficar lá dentro
     
-    8) saia do Inteli pela catraca principal e vá até o outro lado da rua, monitore por 10s.
+    8) saia do Inteli pela catraca da recepção e vá até o outro lado da rua (onde tem um lago vazio com lona preta), monitore por 10s.
     
     9) Encerre o vídeo lá.
     
