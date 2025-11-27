@@ -345,7 +345,7 @@ void loop() {
 
 # Entregável e Regras do Ensaio do Mapa de Calor do WiFi
 
-A) Faça um vídeo CONTÍNUO (sem cortes) de até 7min monstrando o gráfico do Ubidots, o seu monitor Serial e o ESP32. Tudo no mesmo quadro. Tente dividir a tela compartilhando o Ubidots e o seu monitor Serial.
+A) Mantenha o celular na horizontal e faça um vídeo CONTÍNUO (sem cortes) de até 10min monstrando o gráfico do Ubidots, o seu monitor Serial e o ESP32. Tudo no mesmo quadro. Tente dividir a tela compartilhando o Ubidots e o seu monitor Serial.
 
 B) Visite os seguintes locais:
 
@@ -363,11 +363,11 @@ B) Visite os seguintes locais:
     
     7) dessa pelo elevador novamente sem ficar lá dentro
     
-    8) saia do Inteli pela catraca da recepção e vá até o outro lado da rua (onde tem um lago vazio com lona preta), monitore por 10s.
+    8) saia do Inteli pela catraca da recepção e vá até a quadra de areia e monitore por 10s.
     
     9) Encerre o vídeo lá.
     
-C) Suba o vídeo no YouTube, deixe-o como não listado
+C) Suba o vídeo no YouTube, deixe-o como **não listado**. Vídeos do Google Drive não serão aceitos.
 
 D) Monte um relatório descrevendo como ficou o sinal em cada local e conclua as diferenças
 
