@@ -200,19 +200,25 @@ d) Converta -35dBm para escala linear
 
 # Ponderada
 
-Nesta atividade, você investigará a intensidade do sinal Wi-Fi recebido por um ESP32 em diferentes locais do Inteli e apresentará os resultados em **dBm**. O ESP32 utiliza a rede IoT e publica a telemetria no broker local da sala. Seu grupo deverá visualizar o RSSI no Monitor Serial e desenvolver, na própria instância do **Node-RED**, um gráfico de RSSI em função do tempo.
+Nesta atividade, você investigará a intensidade do sinal Wi-Fi recebido por um ESP32 e apresentará os resultados em **dBm**. O ensaio será realizado **dentro da sala de aula**, pois o ESP32 precisa permanecer conectado à rede IoT do roteador local para publicar a telemetria no broker.
+
+Para investigar o efeito de uma barreira metálica sobre o sinal, o grupo deverá comparar as leituras com a antena do ESP32 fora e dentro de um recipiente. Pode ser usada, por exemplo, uma garrafa metálica, uma garrafa PET seca revestida com papel-alumínio ou uma panela. O grupo deverá apresentar o RSSI no Monitor Serial e configurar, na sua instância do Node-RED, um gráfico de RSSI em função do tempo.
 
 O `inteli_broker.h` usado na turma **já adiciona o campo `rssi` à telemetria** a partir de `WiFi.RSSI()`. Portanto, não é necessário programar uma segunda publicação MQTT para esse mesmo valor. No sketch `.ino`, você também fará a leitura para mostrá-la no Monitor Serial.
 
 **Configuração do Node-RED:** cabe aos alunos identificar o tópico de telemetria do próprio ESP32, tratar o payload e configurar o fluxo e o dashboard para exibir o campo `rssi` em dBm. Não há um fluxo pronto fornecido neste enunciado. O grupo deve utilizar a sua própria instância e os dados de acesso enviados pelo professor no canal privado.
 
-O ESP32 se conecta à rede IoT do roteador da sala; o notebook acessa, preferencialmente, o Node-RED pela rede institucional. O ensaio investiga o sinal **da rede à qual o ESP32 está conectado**, e não o sinal de qualquer rede Wi-Fi disponível nos locais visitados.
+O ESP32 se conecta à rede IoT do roteador da sala; o notebook acessa, preferencialmente, o Node-RED pela rede institucional. O ensaio investiga o sinal **da rede à qual o ESP32 está conectado**, e não o sinal de qualquer outra rede Wi-Fi disponível na sala.
 
-### Atenção ao ensaio de deslocamento
+### Atenção ao ensaio com recipiente metálico
 
-O broker é local. Ao se afastar do roteador ou entrar no elevador, o ESP32 pode perder o Wi-Fi e, consequentemente, a conexão com o broker. Nesse período, o dashboard pode parar de atualizar. **Não interprete o último ponto do gráfico como uma leitura atual** e não considere `0 dBm` uma leitura de desconexão. Registre no vídeo e no relatório quando ocorrer uma desconexão, uma reconexão ou uma lacuna de dados.
+Ao colocar a antena dentro do recipiente, o sinal pode diminuir ou a conexão com o roteador pode ser interrompida. Nesse caso, a publicação no broker e a atualização do dashboard também podem parar.
 
-Com o `inteli_broker.h` desta aula, não há garantia de armazenamento e reenvio posterior das leituras feitas fora de conexão; também não há um RSSI válido da conexão anterior após a desconexão. O teste no elevador é uma observação de atenuação ou perda de sinal em um ambiente com superfícies metálicas: o resultado, sozinho, não comprova uma gaiola de Faraday ideal. Faça os deslocamentos e o registro seguindo as condições permitidas no local.
+**Não interprete o último ponto do gráfico como uma leitura atual** e não registre `0 dBm` como valor de desconexão. Mostre e registre no vídeo e no relatório eventuais interrupções, reconexões e lacunas de dados. Com o `inteli_broker.h` desta aula, não há garantia de armazenamento e reenvio posterior das leituras feitas fora de conexão; também não há um RSSI válido da conexão anterior após a desconexão.
+
+O resultado depende do material, das aberturas, da posição da antena e das condições do ambiente. O teste demonstra uma tentativa de atenuação do sinal por uma barreira metálica; ele não comprova, por si só, uma gaiola de Faraday ideal.
+
+**Cuidados na montagem:** posicione a antena sem forçá-la e evite que a placa energizada ou seus contatos elétricos encostem diretamente no metal. Não coloque recipientes com água ou outros líquidos próximos ao circuito.
 
 ## Barema
 
@@ -297,33 +303,22 @@ O grupo deverá identificar e apresentar o campo **`rssi`**, com unidade **dBm**
 
 ---
 
-# Entregável e Regras do Ensaio do Mapa de Calor do WiFi
+# Entregável e regras do ensaio de atenuação do sinal Wi-Fi
 
 A) Mantenha o celular na horizontal e faça um vídeo CONTÍNUO (sem cortes) de até 10 minutos mostrando o gráfico do Node-RED, o Monitor Serial e o ESP32 no mesmo quadro. Organize a visualização de modo que o gráfico e o Monitor Serial possam ser acompanhados. Registre também eventuais desconexões ou interrupções no gráfico.
 
-B) Visite os seguintes locais:
+B) Realize o ensaio sem sair da sala de aula:
 
-    1) sala de aula, monitore por 10s
-    
-    2) catraca da recepção (onde tem uma bancada com recepcionistas), monitore por 10s
-    
-    3) suba para o 1º andar, vá até o posto do IT Bar, monitore por 10s
-    
-    4) ainda no 1º andar, entre no elevador e fique por lá com a porta fechada por 20s e monitore
-    
-    5) suba até 2º andar, vá até laboratório do André Leal, monitore por 10s
-    
-    6) vá até o final do mesanino 2, na última salinha de reunião, monitore por 10s
-    
-    7) dessa pelo elevador novamente sem ficar lá dentro
-    
-    8) saia do Inteli pela catraca da recepção e vá até a quadra de areia e monitore por 10s.
-    
-    9) Encerre o vídeo lá.
-    
+1. Com a antena fora do recipiente, observe e registre o RSSI por pelo menos **10 segundos**.
+2. Introduza a antena no recipiente escolhido e observe o sinal por pelo menos **20 segundos**.
+3. Retire a antena do recipiente e observe o sinal por mais **10 segundos**.
+4. Compare os valores observados nas três etapas. Caso a conexão seja interrompida, registre em qual etapa isso aconteceu e observe se houve reconexão após retirar a antena.
+
+Se o grupo desejar, poderá repetir o teste com outra posição ou outro recipiente e comparar os resultados.
+
 C) Suba o vídeo no YouTube, deixe-o como **não listado**. Vídeos do Google Drive não serão aceitos.
 
-D) Monte um relatório descrevendo como ficou o sinal em cada local e conclua as diferenças
+D) Elabore um relatório descrevendo os valores ou comportamentos observados com a antena fora, dentro e novamente fora do recipiente. Compare os resultados e registre eventuais desconexões ou períodos sem atualização.
 
 E) Trave o seu relatório num PDF e adicione o link do YouTube e poste na Adalove
 
