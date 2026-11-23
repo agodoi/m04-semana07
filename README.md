@@ -2,7 +2,7 @@
 
 ## Terças e quintas. Professor de horário parcial. Nesses 2 dias, podem contar comigo!
 
-# Semama 07 - Transmissão de Sinal e Dashboard (Atividade Ponderada em Sala)
+# Semana 07 - Transmissão de Sinal e Dashboard (Atividade Ponderada em Sala)
 
 ## Impactos no seu Projeto
 
@@ -19,7 +19,7 @@
 
 # Entendendo o dB e o dBm
 
-O **dBm** é uma unidade de medida que expressa a potência de um sinal em **decibéis** (dB) em relação a **1 milivatt (mW)**. É uma medida logarítmica utilizada para avaliar a intensidade de um sinal de transmissão ou recepção, como o sinal de Wi-Fi em uma rede LAN. Foi criado pelo Graham Bell como forma de medir sua invensão, o sinal do telefone nas casas dos clientes.
+O **dBm** é uma unidade de medida que expressa a potência de um sinal em **decibéis** (dB) em relação a **1 milivatt (mW)**. É uma medida logarítmica utilizada para avaliar a intensidade de um sinal de transmissão ou recepção, como o sinal de Wi-Fi em uma rede LAN.
 
 - **dB** (decibéis) é uma medida relativa, usada para comparar níveis de potência.
 - **dBm** é uma medida absoluta, referida a uma potência de 1 mW.
@@ -34,7 +34,7 @@ Por exemplo:
 - Se a potência P do sinal é de 1 mW, o valor em dBm será 0 dBm.
 - Se a potência P é 10 mW, o valor será 10 dBm.
 
-Curiosidade: a presença do 10 na fórmula apelidou de 10 Bells ou Decibel.
+O nome decibel faz referência ao bel; um decibel equivale a um décimo de bel.
 
 ### (5.1) Importância do dBm na Medição de Sinal Wi-Fi e do ESP32
 
@@ -42,14 +42,14 @@ No contexto de redes LAN, particularmente para redes Wi-Fi, o **dBm** é importa
 
 ### (5.2) Interpretação dos Valores de dBm
 
-Como o dBm é uma escala logarítmica, números mais negativos indicam sinais mais fracos. Veja uma escala de interpretação comum para redes Wi-Fi:
+Como o dBm é uma escala logarítmica, números mais negativos indicam sinais mais fracos. A escala abaixo é apenas orientativa: os resultados variam com ruído, interferência, equipamento e requisitos da aplicação. Um valor de RSSI não garante sozinho desempenho nem estabilidade:
 
-- **0 a -30 dBm**: sinal excelente. O dispositivo está muito próximo ao roteador, e a conexão será muito rápida e estável.
+- **0 a -30 dBm**: sinal excelente. Pode indicar sinal muito forte; isso, isoladamente, não garante velocidade ou estabilidade.
 - **-31 a -50 dBm**: sinal muito bom. Ainda proporciona alta qualidade de conexão.
-- **-51 a -60 dBm**: sinal bom. A maioria das aplicações funcionará sem problemas.
+- **-51 a -60 dBm**: sinal bom. Em geral indica sinal bom, mas outros fatores influenciam a conexão.
 - **-61 a -70 dBm**: sinal aceitável. Pode haver alguma queda na velocidade ou na estabilidade da conexão, especialmente em ambientes congestionados.
 - **-71 a -80 dBm**: sinal fraco. A conexão pode ser instável, com quedas de velocidade ou interrupções.
-- **-81 dBm ou mais fraco**: sinal muito fraco ou inexistente. Provavelmente, o dispositivo não conseguirá se conectar.
+- **-81 dBm ou mais fraco**: sinal muito fraco; a conectividade pode ser prejudicada e depende do ambiente e do dispositivo.
 
 ### (5.3) Por que Medir o dBm em Redes Wi-Fi?
 
@@ -59,7 +59,7 @@ Como o dBm é uma escala logarítmica, números mais negativos indicam sinais ma
 
 - **Configuração de Redes Mesh**: em redes Wi-Fi que utilizam tecnologia Mesh, a medição de dBm ajuda a posicionar os nós de forma eficiente para maximizar a cobertura e minimizar a interferência.
 
-- **Análise de Interferência**: o dBm também pode ser utilizado para detectar interferências de outros dispositivos que operam na mesma frequência, como micro-ondas ou telefones sem fio, permitindo ajustes no canal de operação do Wi-Fi.
+- **Análise de Interferência**: variações de RSSI podem motivar uma investigação, mas não identificam a causa da interferência por si só. Para investigar ruído e canais, são necessárias outras medições e ferramentas apropriadas.
 
 
 ### (5.4) Qual a diferença entre dBm e dB?
@@ -70,7 +70,7 @@ A diferença entre **dBm** e **dB** está relacionada ao contexto de uso e à re
 ### 5.4.1 dB (decibel)
 
 - **Definição:** 
-  - Uma unidade de medida relativa, que expressa a razão entre duas potências, intensidades ou amplitudes.
+  - Uma medida logarítmica que expressa uma razão entre grandezas compatíveis, como duas potências.
   - É adimensional e não tem uma referência fixa.
     
 - **Fórmula:**
@@ -80,7 +80,7 @@ A diferença entre **dBm** e **dB** está relacionada ao contexto de uso e à re
 
     Onde \(P_1\) e \(P_2\) são as potências comparadas.
 
-   - Para amplitudes (como tensões ou correntes):  
+   - Para amplitudes (como tensões ou correntes), ao comparar potências com impedâncias equivalentes:  
 
    ![Equação de Amplitudes](https://latex.codecogs.com/png.latex?\text{dB}=20\cdot\log_{10}\left(\frac{A_1}{A_2}\right))
 
@@ -151,7 +151,7 @@ o dBW vai aparecer quando vc disser que a PTX ou PRX é de tanto X [dBW]
 
 ### Exemplos práticos
 
-Um sinal WiFi está com 10dBm na entrada da antena do ESP32. Quanto isso vale na escala linear comparado com 1mW?
+Em um exemplo matemático, considere uma potência de 10 dBm. Quanto isso vale na escala linear, em mW? Esse valor é ilustrativo e não representa uma leitura típica de RSSI nesta prática.
 
 X 		= 10 . log (Pd / 1mW)
 
@@ -200,152 +200,106 @@ d) Converta -35dBm para escala linear
 
 # Ponderada
 
-Este projeto é composto de uma coleta de potência do sinal WiFi em dBm de uma rede WiFi usando um ESP32 e a publicação destes valores em uma dashboard de uma plataforma online. O projeto IoT deve posssuir um ESP32 conectado a um Wifi, medindo o sinal de radiofrequência e imprimindo os dados em dBm na porta serial da Arduino IDE, além de publicar tais valores para a plataforma. Elabore um código MQTT capaz de transferir o valor de dBm de cada instante para a plataforma online. Nesta plataforma online, configure um gráfico contínuo de valores do dBm (gráfico tempo x dBm), e realize testes em cenários distintos. No final, vá até o elevador do Inteli para simular a gaiola de Faraday. Mais detalhes, vá até o final dessa aula.
+Nesta atividade, você investigará a intensidade do sinal Wi-Fi recebido por um ESP32 em diferentes locais do Inteli e apresentará os resultados em **dBm**. O ESP32 utiliza a rede IoT e publica a telemetria no broker local da sala. Seu grupo deverá visualizar o RSSI no Monitor Serial e desenvolver, na própria instância do **Node-RED**, um gráfico de RSSI em função do tempo.
+
+O `inteli_broker.h` usado na turma **já adiciona o campo `rssi` à telemetria** a partir de `WiFi.RSSI()`. Portanto, não é necessário programar uma segunda publicação MQTT para esse mesmo valor. No sketch `.ino`, você também fará a leitura para mostrá-la no Monitor Serial.
+
+**Configuração do Node-RED:** cabe aos alunos identificar o tópico de telemetria do próprio ESP32, tratar o payload e configurar o fluxo e o dashboard para exibir o campo `rssi` em dBm. Não há um fluxo pronto fornecido neste enunciado. O grupo deve utilizar a sua própria instância e os dados de acesso enviados pelo professor no canal privado.
+
+O ESP32 se conecta à rede IoT do roteador da sala; o notebook acessa, preferencialmente, o Node-RED pela rede institucional. O ensaio investiga o sinal **da rede à qual o ESP32 está conectado**, e não o sinal de qualquer rede Wi-Fi disponível nos locais visitados.
+
+### Atenção ao ensaio de deslocamento
+
+O broker é local. Ao se afastar do roteador ou entrar no elevador, o ESP32 pode perder o Wi-Fi e, consequentemente, a conexão com o broker. Nesse período, o dashboard pode parar de atualizar. **Não interprete o último ponto do gráfico como uma leitura atual** e não considere `0 dBm` uma leitura de desconexão. Registre no vídeo e no relatório quando ocorrer uma desconexão, uma reconexão ou uma lacuna de dados.
+
+Com o `inteli_broker.h` desta aula, não há garantia de armazenamento e reenvio posterior das leituras feitas fora de conexão; também não há um RSSI válido da conexão anterior após a desconexão. O teste no elevador é uma observação de atenuação ou perda de sinal em um ambiente com superfícies metálicas: o resultado, sozinho, não comprova uma gaiola de Faraday ideal. Faça os deslocamentos e o registro seguindo as condições permitidas no local.
 
 ## Barema
 
-SEM EVIDÊNCIAS [0%]
-O projeto IoT não foi desenvolvido e não há evidências (vídeo) a ser entregue, ou o vídeo não está acessível.
+**SEM EVIDÊNCIAS [0%]**  
+O projeto IoT não foi desenvolvido e não há evidências em vídeo, ou o vídeo está inacessível.
 
-INSUFICIENTE [25%]
-O projeto IoT posssui um ESP conectado ao WiFi e mede o sinal de RF na porta serial da IDE.
+**INSUFICIENTE [25%]**  
+O projeto possui um ESP32 conectado ao Wi-Fi e apresenta a medição do RSSI em dBm no Monitor Serial.
 
-BÁSICO [50%]
-O projeto IoT posssui um ESP conectado ao WiFi, medindo o sinal de RF e imprimindo os dados em dBm na porta serial da IDE, mas NÃO roda um código-fonte MQTT e NEM nota-se a reação da plataforma online.
+**BÁSICO [50%]**  
+O ESP32 mede o RSSI e exibe os valores no Monitor Serial, mas não há evidência de publicação MQTT no broker local nem de visualização correspondente no Node-RED.
 
-INTERMEDIÁRIO [75%]
-O projeto IoT posssui um ESP conectado ao WiFi, medindo o sinal de RF e imprimindo os dados em dBm na porta serial da IDE, e rodando um código-fonte MQTT nota-se a reação da plataforma online, mas não mostra o teste do bloqueio de sinal.
+**INTERMEDIÁRIO [75%]**  
+O ESP32 apresenta o RSSI no Monitor Serial, publica a telemetria no broker local e demonstra os dados no Node-RED, mas o vídeo não mostra o teste de bloqueio ou atenuação de sinal.
 
-AVANÇADO [100%]
-O projeto IoT posssui um ESP conectado ao WiFi, medindo o sinal de RF e imprimindo os dados em dBm na porta serial da IDE, e rodando um código-fonte MQTT nota-se a reação da plataforma online, e o vídeo também mostra o teste do bloqueio de sinal.
+**AVANÇADO [100%]**  
+O ESP32 apresenta o RSSI no Monitor Serial, publica a telemetria no broker local, demonstra os dados no Node-RED e mostra o teste de atenuação ou perda de sinal. Se ocorrer desconexão, ela deve ser registrada como resultado do teste, sem inventar dados para o período sem conexão.
 
-# Exemplo de Código
+# Exemplo de código: RSSI com o broker local
 
-### (1) Clássico Código Envia Dados ao Broker [Ubidots]
+## Preparação
 
-#### Esse código está atualizado e funcionando. Alterem as variáveis com const char para as suas credenciais.
+1. Use o arquivo **`inteli_broker.h` fornecido para sua turma** e mantenha-o na mesma pasta do sketch `.ino`. Não altere as configurações do cabeçalho.
+2. Na Arduino IDE, instale o suporte à placa ESP32 e a biblioteca **PubSubClient, de Nick O’Leary**. A biblioteca `WiFi.h` acompanha o suporte ao ESP32.
+3. Escolha um ID disponível dentro da faixa informada ao seu grupo. O ID `222` abaixo é apenas um exemplo da faixa do Grupo 3 da T29; troque-o pelo ID adequado. Não use o mesmo ID em duas placas conectadas ao mesmo tempo.
+4. Abra o Monitor Serial em **115200 baud**. A preparação e a exibição no Node-RED são responsabilidade do grupo.
 
-Se você não mexeu com o Ubidots até agora, [BAIXE AS BIBLIOTECAS AQUI](https://help.ubidots.com/en/articles/748067-connect-an-esp32-devkitc-to-ubidots-over-mqtt)
+```cpp
+#include "inteli_broker.h"  // Cabeçalho configurado pelo professor para a turma.
 
-```
-#include "UbidotsEsp32Mqtt.h"
+const int ID_DISPOSITIVO = 222; // Troque por um ID livre da faixa do grupo.
+const unsigned long INTERVALO_SERIAL_MS = 5000;
+unsigned long ultimaLeituraSerial = 0;
 
-/****************************************
- * Define Constants
- ****************************************/
-
-const char *WIFI_SSID = ""; // Put here your Wi-Fi SSID
-const char *WIFI_PASS = ""; // Put here your Wi-Fi password
-
-const char *UBIDOTS_TOKEN = "PEGAR O TOKEN INDIVIDUAL QUE CHEGOU NO SLACK DO SEU GRUPO"; //PROCURE PELO SEU TOKEN COM O SEU PROFESSOR DE PROG.
-const char *DEVICE_LABEL = "coloque um nome sem caracteres especiais"; // Coloque o nome do dispositivo que você deseja apelidar
-const char *VARIABLE_LABEL1 = "potenciometro"; // Coloque o nome da variável que deseja publicar
-const char *VARIABLE_LABEL2 = "botao"; // Outra variável que será publicada
-const char *CLIENT_ID = "godoi"; //PULO DO GATO! Coloque um nome qualquer para te identificar no Ubidots de 5 a 20 caracteres e que seja diferente dos demais integrantes
-//esse cliente_id é apenas para não sobrepor os tópicos dentro da conta do Ubidots. Ele é importante aqui no código, mas não vai aparecer na sua dashboard do Ubidots.
-
-
-
-Ubidots ubidots(UBIDOTS_TOKEN, CLIENT_ID); //essa linha é novidade
-
-const int PUBLISH_FREQUENCY = 3000; // Update rate in milliseconds
-unsigned long timer;
-uint8_t pinPotenciometro = 34;
-uint8_t pinBotao = 33;
-uint8_t pinLED = 2;
-bool statusLED = false;
-
-/****************************************
- * Auxiliar Functions
- ****************************************/
-
-void callback(char *topic, byte *payload, unsigned int length)
-{
-  Serial.print("Message arrived [");
-  Serial.print(topic);
-  Serial.print("] ");
-  for (int i = 0; i < length; i++)
-  {
-    Serial.print((char)payload[i]);
-  }
-  Serial.println();
-}
-
-/****************************************
- * Main Functions
- ****************************************/
-
-void setup()
-{
-  // put your setup code here, to run once:
+void setup() {
   Serial.begin(115200);
-  ubidots.setDebug(true);  // uncomment this to make debug messages available
-  ubidots.connectToWifi(WIFI_SSID, WIFI_PASS);
-  ubidots.setCallback(callback);
-  ubidots.setup();
-  ubidots.reconnect();
-  pinMode(pinBotao, INPUT_PULLUP);
-  pinMode(pinPotenciometro, INPUT);
-  pinMode(pinLED, OUTPUT);
-
-  timer = millis();
+  InteliBroker.begin(ID_DISPOSITIVO);
 }
 
-void loop()
-{
-  // put your main code here, to run repeatedly:
-  if (!ubidots.connected())
-  {
-    ubidots.reconnect();
-  }
-  if (millis() - timer > PUBLISH_FREQUENCY) // triggers the routine every X seconds
-  {
-    float value1 = analogRead(pinPotenciometro);
-    bool value2 = digitalRead(pinBotao);
-    Serial.println(value1);
-    Serial.println(value2);
-    
-    ubidots.add(VARIABLE_LABEL1, value1); // Insert your variable Labels and the value to be sent
-    ubidots.add(VARIABLE_LABEL2, value2); // Insert your variable Labels and the value to be sent
-    ubidots.publish(DEVICE_LABEL); //pode usar um único publish para várias variáveis
-    timer = millis();
-  }
-  ubidots.loop();
-}
-```
-
-### (2) Clássico Código de Rastreamento do dBm [ESP32]
-
-```
 void loop() {
-  if (WiFi.status() == WL_CONNECTED) {
-    int32_t dBm = WiFi.RSSI(); // RSSI fornece o valor em dBm
-    Serial.printf("Nível de Sinal Wi-Fi: %d dBm\n", dBm);
+  // Mantém a conexão e a publicação periódica da telemetria.
+  InteliBroker.loop();
 
-    // Publicação no Ubidots
-    if (millis() - last_publish > PUBLISH_INTERVAL) {
-      ubidots.add(VARIABLE_LABEL, dBm);
-      ubidots.publish(DEVICE_LABEL);
-      last_publish = millis();
+  // Exibe localmente o RSSI; não cria uma segunda publicação MQTT.
+  if (millis() - ultimaLeituraSerial >= INTERVALO_SERIAL_MS) {
+    ultimaLeituraSerial = millis();
+
+    if (WiFi.status() == WL_CONNECTED) {
+      int rssi = WiFi.RSSI();
+      Serial.printf("RSSI do Wi-Fi: %d dBm\n", rssi);
+    } else {
+      Serial.println("Wi-Fi desconectado: RSSI indisponível.");
     }
-  } else {
-    Serial.println("Wi-Fi desconectado! Tentando reconectar...");
-    WiFi.begin(SSID, PASSWORD);
   }
 }
 ```
 
----
+## Como o valor chega ao Node-RED?
 
-### Dicas de Implementação
-- **Evite usar `delay()` maiores que 500ms** no loop para não prejudicar a sincronização de dados.
-- Use o método `millis()` para controlar os intervalos de publicação.
-- Ajustes as variáveis entre os dois códigos que funciona.
+O arquivo `inteli_broker.h` da turma lê o sinal por meio de `WiFi.RSSI()` e inclui esse valor como `rssi` na mensagem de telemetria. Com o cabeçalho usado na semana 05, o tópico segue o padrão `inteli/iot/<ID>/telemetria`. Para o ID 222, por exemplo:
+
+```text
+inteli/iot/222/telemetria
+```
+
+Exemplo ilustrativo de uma mensagem:
+
+```json
+{"device":222,"seq":3,"rssi":-65,"uptime_ms":15000,"reconnects":1}
+```
+
+O grupo deverá identificar e apresentar o campo **`rssi`**, com unidade **dBm**, em um gráfico de tempo por RSSI no Node-RED. Verifique o formato da mensagem e o tópico efetivamente recebido. O gráfico não é criado automaticamente pelo broker nem pelo `.ino`.
+
+> O cabeçalho utilizado na semana 05 publica aproximadamente a cada 5 segundos enquanto a conexão estiver ativa. A impressão no Monitor Serial e a publicação têm temporizadores independentes: seus instantes e valores podem não ser exatamente iguais. Confira se o `.h` efetivamente fornecido à turma mantém o campo e o intervalo indicados. Durante a conexão inicial ou uma reconexão, o cabeçalho pode esperar ou reiniciar o ESP32, e as mensagens no Monitor Serial dependem da execução do `loop()`.
+
+### Dicas de implementação
+
+- Mantenha `InteliBroker.loop()` sendo executado frequentemente.
+- Use `millis()` para controlar a impressão no Monitor Serial sem interromper o programa com esperas longas.
+- A instância Node-RED e suas credenciais são do grupo. Não compartilhe a senha do editor em canais públicos nem em vídeos ou repositórios.
+- Observe que o gráfico depende da configuração feita pelo grupo e da comunicação ativa entre ESP32, broker e Node-RED.
+
 ---
 
 # Entregável e Regras do Ensaio do Mapa de Calor do WiFi
 
-A) Mantenha o celular na horizontal e faça um vídeo CONTÍNUO (sem cortes) de até 10min monstrando o gráfico do Ubidots, o seu monitor Serial e o ESP32. Tudo no mesmo quadro. Tente dividir a tela compartilhando o Ubidots e o seu monitor Serial.
+A) Mantenha o celular na horizontal e faça um vídeo CONTÍNUO (sem cortes) de até 10 minutos mostrando o gráfico do Node-RED, o Monitor Serial e o ESP32 no mesmo quadro. Organize a visualização de modo que o gráfico e o Monitor Serial possam ser acompanhados. Registre também eventuais desconexões ou interrupções no gráfico.
 
 B) Visite os seguintes locais:
 
@@ -378,4 +332,4 @@ Prazo: começa na aula e fecha hoje até às 18h.
 
 # Conclusão
 - O monitoramento de dBm é fundamental para diagnosticar e otimizar conexões Wi-Fi em projetos IoT.
-- O ESP32, aliado ao Ubidots, permite uma análise em tempo real e com interface amigável para dashboards.
+- O ESP32 publica o RSSI no broker local, e o Node-RED pode apresentar os dados em um dashboard configurado pelo grupo.
